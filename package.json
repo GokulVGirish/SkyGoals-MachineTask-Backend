@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node dist/main.js",
+  
+    "start:ts": "tsc -w",
+    "start:js": "nodemon dist/main.js",
+    "start": "concurrently npm:start:*",
     "test": "echo \"Error: no test specified\" && exit 1",
     "insert": "node dist/frameworks/insertData/insertUserData.js",
     "build": "tsc",
