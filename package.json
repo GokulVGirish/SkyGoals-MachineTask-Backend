@@ -6,7 +6,8 @@
     "start": "node dist/main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "insert": "node dist/frameworks/insertData/insertUserData.js",
-    "build": "tsc"
+    "build": "tsc",
+    "postinstall": "npm install && npm run build"
   },
   "keywords": [],
   "author": "",
