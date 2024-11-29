@@ -4,9 +4,15 @@ class customerInteractor {
     constructor(Repository) {
         this.Repository = Repository;
     }
-    async fetchCustomers({ page, limit, search, filterField, filterValue }) {
+    async fetchCustomers({ page, limit, search, filterField, filterValue, }) {
         try {
-            const response = await this.Repository.fetchCustomers({ page, limit, search, filterField, filterValue });
+            const response = await this.Repository.fetchCustomers({
+                page,
+                limit,
+                search,
+                filterField,
+                filterValue,
+            });
             return { customers: response.customers, totalPage: response.totalPage };
         }
         catch (error) {
