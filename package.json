@@ -7,7 +7,7 @@
     "start:js": "nodemon dist/main.js",
     "start": "concurrently npm:start:*",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "insert":"node dist/frameworks/insertData/insertUserData.js",
+    "insert": "node dist/frameworks/insertData/insertUserData.js",
     "build": "tsc"
   },
   "keywords": [],
@@ -18,7 +18,8 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.0",
     "concurrently": "^9.1.0",
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
     "@faker-js/faker": "^9.2.0",
