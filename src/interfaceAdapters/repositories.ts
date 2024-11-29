@@ -26,9 +26,28 @@ class customerRepository implements IRepository {
       }
 
       if (filterField && filterValue) {
-        const queryValue =
-          filterField === "dob" ? new Date(filterValue) : filterValue;
-        query[filterField] = queryValue;
+       if (filterField === "dob") {
+       
+         const date = new Date(
+           new Date(filterValue).getTime() + (5 * 60 + 30) * 60 * 1000
+         );
+
+        
+         const startOfDay = new Date(date);
+         startOfDay.setHours(0, 0, 0, 0);
+
+      
+         const endOfDay = new Date(date);
+         endOfDay.setHours(23, 59, 59, 999);
+   
+
+      
+
+   
+         query[filterField] = { $gte: startOfDay, $lt: endOfDay };
+       } else {
+         query[filterField] = filterValue;
+       }
       }
       const result = await Customer.aggregate([
         {

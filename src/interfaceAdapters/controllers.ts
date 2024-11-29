@@ -14,18 +14,18 @@ class customersController implements IControllers {
         filterField = "",
         filterValue = "",
       } = req.query;
-      // console.log(
-      //   "page",
-      //   page,
-      //   "limit",
-      //   limit,
-      //   "search",
-      //   search,
-      //   "filterFIeld",
-      //   filterField,
-      //   "filterValue",
-      //   filterValue
-      // );
+      console.log(
+        "page",
+        page,
+        "limit",
+        limit,
+        "search",
+        search,
+        "filterFIeld",
+        filterField,
+        "filterValue",
+        filterValue
+      );
       const pageNumber = parseInt(page as string, 10);
       const limitNumber = parseInt(limit as string, 10);
 

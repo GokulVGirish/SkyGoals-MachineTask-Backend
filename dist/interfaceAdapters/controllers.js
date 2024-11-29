@@ -7,18 +7,7 @@ class customersController {
     async fetchCustomers(req, res, next) {
         try {
             const { page = "1", limit = "10", search = "", filterField = "", filterValue = "", } = req.query;
-            // console.log(
-            //   "page",
-            //   page,
-            //   "limit",
-            //   limit,
-            //   "search",
-            //   search,
-            //   "filterFIeld",
-            //   filterField,
-            //   "filterValue",
-            //   filterValue
-            // );
+            console.log("page", page, "limit", limit, "search", search, "filterFIeld", filterField, "filterValue", filterValue);
             const pageNumber = parseInt(page, 10);
             const limitNumber = parseInt(limit, 10);
             const response = await this.Interactor.fetchCustomers({
